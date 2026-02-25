@@ -1,0 +1,103 @@
+<%- include('partials/header') %>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-4">Welcome to BlogHub</h1>
+            <p class="lead mb-4">Share your stories, ideas, and knowledge with the world</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="/register" class="btn btn-light btn-lg px-4">Get Started</a>
+                <a href="/blogs" class="btn btn-outline-light btn-lg px-4">Explore Blogs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose BlogHub?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fas fa-pen-nib feature-icon"></i>
+                        <h4>Easy Publishing</h4>
+                        <p class="text-muted">Create and publish your blogs with our intuitive editor. Add images and videos effortlessly.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fas fa-users feature-icon"></i>
+                        <h4>Community</h4>
+                        <p class="text-muted">Connect with other writers and readers. Build your audience and grow together.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h4>Secure & Fast</h4>
+                        <p class="text-muted">Your content is safe with us. Enjoy fast loading times and secure authentication.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Blogs Section -->
+    <section class="py-5" style="background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <h2 class="text-center mb-5">Featured Blogs</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=250&fit=crop" class="card-img-top" alt="Blog Image" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Getting Started with Blogging</h5>
+                            <p class="card-text text-muted">Learn how to start your blogging journey and create engaging content...</p>
+                            <a href="/blogs" class="btn btn-primary btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=250&fit=crop" class="card-img-top" alt="Blog Image" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Tech Trends 2024</h5>
+                            <p class="card-text text-muted">Discover the latest technology trends that are shaping our future...</p>
+                            <a href="/blogs" class="btn btn-primary btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=250&fit=crop" class="card-img-top" alt="Blog Image" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Creative Writing Tips</h5>
+                            <p class="card-text text-muted">Improve your writing skills with these simple yet effective tips...</p>
+                            <a href="/blogs" class="btn btn-primary btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="/blogs" class="btn btn-primary btn-lg">View All Blogs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop" class="img-fluid rounded-3" alt="Start Blogging">
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <h2 class="mb-4">Ready to Share Your Story?</h2>
+                    <p class="text-muted mb-4">Join thousands of writers who are already sharing their ideas on BlogHub. Create your free account today and start publishing!</p>
+                    <a href="/register" class="btn btn-primary btn-lg">Create Free Account</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<%- include('partials/footer') %>

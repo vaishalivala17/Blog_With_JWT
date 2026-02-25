@@ -1,0 +1,74 @@
+<%- include('../partials/header') %>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Edit Blog</h1>
+            <p class="lead">Update your blog content</p>
+        </div>
+    </div>
+
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg">
+                    <div class="card-body p-5">
+                        <% if (typeof error !== 'undefined' && error) { %>
+                            <div class="error-message">
+                                <i class="fas fa-exclamation-circle me-2"></i><%= error %>
+                            </div>
+                        <% } %>
+                        
+                        <form action="/blogs/edit/<%= blog._id %>" method="POST">
+                            <div class="mb-4">
+                                <label for="title" class="form-label">Blog Title</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-transparent">
+                                        <i class="fas fa-heading"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="title" name="title" value="<%= blog.title %>" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="imageUrl" class="form-label">Image URL</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-transparent">
+                                        <i class="fas fa-image"></i>
+                                    </span>
+                                    <input type="url" class="form-control" id="imageUrl" name="imageUrl" value="<%= blog.image %>" placeholder="Enter image URL">
+                                </div>
+                                <small class="text-muted">Current image: <%= blog.image || 'No image' %></small>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="videoUrl" class="form-label">Video URL</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-transparent">
+                                        <i class="fas fa-video"></i>
+                                    </span>
+                                    <input type="url" class="form-control" id="videoUrl" name="videoUrl" value="<%= blog.video %>" placeholder="Enter video URL">
+                                </div>
+                                <small class="text-muted">Current video: <%= blog.video || 'No video' %></small>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="content" class="form-label">Blog Content</label>
+                                <textarea class="form-control" id="content" name="content" rows="10" required><%= blog.content %></textarea>
+                            </div>
+                            
+                            <div class="d-flex gap-3">
+                                <button type="submit" class="btn btn-success btn-lg flex-grow-1">
+                                    <i class="fas fa-save me-2"></i>Update Blog
+                                </button>
+                                <a href="/blogs/my-blogs" class="btn btn-outline-secondary btn-lg">
+                                    <i class="fas fa-times me-2"></i>Cancel
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('../partials/footer') %>

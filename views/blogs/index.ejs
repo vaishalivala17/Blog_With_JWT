@@ -1,0 +1,52 @@
+<%- include('../partials/header') %>
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold">All Blogs</h1>
+            <p class="lead">Explore latest blogs from our community</p>
+        </div>
+    </div>
+
+    <div class="container py-4">
+        <% if (blogs.length > 0) { %>
+            <div class="row g-4">
+                <% blogs.forEach(blog => { %>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <% if (blog.image) { %>
+                                <img src="<%= blog.image %>" class="card-img-top" alt="Blog Image" style="height: 200px; object-fit: cover;">
+                            <% } else { %>
+                                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=250&fit=crop" class="card-img-top" alt="Default Blog Image" style="height: 200px; object-fit: cover;">
+                            <% } %>
+                            <div class="card-body">
+                                <h5 class="card-title"><%= blog.title %></h5>
+                                <p class="card-text text-muted"><%= blog.content.substring(0, 100) %>...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">
+                                        <i class="fas fa-user me-1"></i><%= blog.author.username %>
+                                    </small>
+                                    <small class="text-muted">
+                                        <i class="fas fa-calendar me-1"></i><%= new Date(blog.createdAt).toLocaleDateString() %>
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <a href="/blogs/view/<%= blog._id %>" class="btn btn-primary btn-sm w-100">
+                                    <i class="fas fa-book-reader me-1"></i> Read More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <div class="text-center py-5">
+                <i class="fas fa-blog fa-4x text-muted mb-4"></i>
+                <h3>No blogs yet</h3>
+                <p class="text-muted">Be the first to create a blog!</p>
+                <a href="/blogs/create" class="btn btn-primary mt-2">Create First Blog</a>
+            </div>
+        <% } %>
+    </div>
+
+<%- include('../partials/footer') %>
